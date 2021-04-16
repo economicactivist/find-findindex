@@ -32,8 +32,11 @@ removeUser(users, 'akagen') // undefined
 */
 
 function removeUser(usersArray, username) {
+  let removedObj;
   const idxToDelete = usersArray.findIndex(val => val.username === username)
-  const removedObj = idxTousersArray.splice(idxToDelete, 1)
+  if(idxToDelete !== -1){
+    removedObj = usersArray.splice(idxToDelete, 1)
+  }
   console.log(removedObj)
   console.log(idxToDelete)
   return idxToDelete !== -1 ? removedObj[0] : undefined
